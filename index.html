@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>songjintao-blog</title>
+  <title>Terry.Song&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="songjintao-blog">
+  <meta name="description" content="记录工作和生活">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Terry.Song&#39;s blog">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="songjintao-blog">
+<meta property="og:site_name" content="Terry.Song&#39;s blog">
+<meta property="og:description" content="记录工作和生活">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="songjintao">
+<meta property="article:author" content="Terry">
+<meta property="article:tag" content="宋金涛,songjintao,Terry.Song,terry.song,jintao.song">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="songjintao-blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Terry.Song&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -152,6 +155,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/04/my-first-blog/">avascript代码的执行流程和栈溢出</a>
+    </h1>
+  
+
+        
+        <a href="/2023/01/04/my-first-blog/" class="archive-article-date">
+  	<time datetime="2023-01-04T15:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一段 JavaScript 代码在执行之前需要被 JavaScript 引擎编译，编译完成之后，才会进入执行阶段。大致流程你可以参考下图<br><img src="/../images/jsexcute.webp" alt="JavaScript 的执行流程图" title="js执行流程"><br>1.编译阶段<br>输入一段代码，经过编译后，会生成两部分内容：执行上下文（Execution context）和可执行代码。<br><img src="/../images/compilephase%20.webp" alt="编译阶段" title="编译阶段"><br>执行上下文是 JavaScript 执行一段代码时的运行环境，比如调用一个函数，就会进入这个函数的执行上下文，确定该函数在执行期间用到的诸如 this、变量、对象以及函数等。在执行上下文中存在一个变量环境的对象（Viriable Environment），该对象中保存了变量提升的内容。<br>经过 var 声明的，因此 JavaScript 引擎将在环境对象中创建一个名为 myname 的属性，并使用 undefined 对其初始化；<br>通过 function 定义的函数，所以它将函数定义存储到堆 (HEAP）中，并在环境对象中创建一个 showName 的属性，然后将该属性值指向堆中函数的位置<br>2.执行阶段<br>JavaScript 引擎开始执行“可执行代码”，按照顺序一行一行地执行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/01/04/my-first-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -237,7 +314,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 songjintao
+    		&copy; 2023 Terry
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -318,6 +395,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
